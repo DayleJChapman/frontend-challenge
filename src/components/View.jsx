@@ -10,12 +10,12 @@ const View = ({ location }) => {
 		const getForecast = async () => {
 			const apiKey = process.env.REACT_APP_API_KEY;
 			const params = `key=${apiKey}&q=${location}&days=5&aqi=no&alerts=no`;
-			const url = `http://api.weatherapi.com/v1/forecast.json?${params}`;
+			const url = `https://api.weatherapi.com/v1/forecast.json?${params}`;
 
 			try {
 				const res = await fetch(url, {
 					methode: 'GET',
-					mode: 'cors',
+					mode: 'no-cors',
 					headers: {
 						'Content-Type': 'application/json',
 					},
